@@ -1,11 +1,11 @@
-using Microsoft.Unity.VisualStudio.Editor;
+//using Microsoft.Unity.VisualStudio.Editor;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Collections.LowLevel.Unsafe;
-using Unity.VisualScripting;
+//using System.Collections;
+//using System.Collections.Generic;
+//using Unity.Collections.LowLevel.Unsafe;
+//using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
+//using UnityEngine.UI;
 
 public class AllCtrl : MonoBehaviour,IObserver
 {
@@ -46,6 +46,14 @@ public class AllCtrl : MonoBehaviour,IObserver
     {
         MyGameManager.Instance.RemoveObserver(eventName.HittheTarget,this);
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            MyGameManager.Instance.Notify(eventName.PlayerDead, EventArgs.Empty);
+        }
+    }
+
     // Update is called once per frame
     public void ResponseToNotify(EventArgs e)
     {
@@ -99,9 +107,13 @@ public class AllCtrl : MonoBehaviour,IObserver
     private int LevelChoose(int index)
     {
         int level = 0;
-        if(index >= 0 && index < 3)
+        if(index == 0)
         {
             level = 0;
+        }
+        else if(index >= 0 && index < 3)
+        {
+            level = 1;
         }
         else if(index >= 3 && index < 5)
         {

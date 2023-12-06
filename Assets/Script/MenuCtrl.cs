@@ -18,6 +18,7 @@ public class MenuCtrl : MonoBehaviour,IObserver
     {
         MyGameManager.Instance.RemoveObserver(eventName.PlayerDead, this);
     }
+    
     public void ResponseToNotify(EventArgs e)
     {
         EndGame();

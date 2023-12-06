@@ -14,6 +14,8 @@ public class EndPanelCtrl : MonoBehaviour
         switch (level)
         {
             case 0:
+                endText.text = "尚未测出视力，就要退出了吗";
+                break;
             case 1:
             case 2:
             case 3:

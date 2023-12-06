@@ -14,6 +14,7 @@ public class TimerCtrl : MonoBehaviour,IObserver
     // Start is called before the first frame update
     void Start()
     {
+        timer = 61;
         MyGameManager.Instance.AddObserver(eventName.HittheTarget, this);
         timerText = GetComponent<Text>();
         timerSB = new StringBuilder();
