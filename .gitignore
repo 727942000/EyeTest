@@ -1,0 +1,9 @@
+[Ll]ibrary
+[Ll]ogs
+[Oo]bj
+[Pp]ackages
+[Uu]serSettings
+*.sln
+*.vsconfig
+*.csproj
+*.vs
